@@ -30,9 +30,9 @@ public class ProveedoresController {
     }
 
     @GetMapping("/proveedor/{id}")
-    public ProductosModel verProveedor(@PathVariable Long id) {
+    public ProveedoresModel verProveedor(@PathVariable Integer id) {
 
-        return null;
+        return proveedoresService.buscarProveedorePorId(id);
 
     }
 
@@ -41,19 +41,19 @@ public class ProveedoresController {
     public ResponseEntity<RespuestaApi> crearProveedor(@Valid @RequestBody ProveedoresModel proveedor) {
 
 
-        return null;
+        return proveedoresService.guardarProveedor(proveedor);
 
     }
     @DeleteMapping("/eliminarProveedor/{id}")
-    public ResponseEntity<RespuestaApi> eliminarProveedor(@PathVariable Long id) {
+    public ResponseEntity<RespuestaApi> eliminarProveedor(@PathVariable Integer id) {
 
-        return null;
+        return proveedoresService.eliminarProveedor(id);
 
     }
 
-    @PutMapping("/actualizarProvedor/{id}")
-    public ResponseEntity<RespuestaApi> actualizarProveedor(@PathVariable Long id, @RequestBody ProveedoresModel proveedor){
-        return null;
+    @PutMapping("/actualizarProveedor/{id}")
+    public ResponseEntity<RespuestaApi> actualizarProveedor(@PathVariable Integer id, @RequestBody ProveedoresModel proveedor){
+        return proveedoresService.actualizarProducto(id,proveedor);
     }
 
 }
