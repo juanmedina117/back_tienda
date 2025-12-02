@@ -22,17 +22,10 @@ public class ProveedoresController {
         this.proveedoresService = proveedoresService;
     }
 
-
-    @GetMapping("/")
-    public String pruebaServicioe() {
-        return "Saludos";
-
-    }
-
     @GetMapping("/proveedores")
     public List<ProveedoresModel> obtenerProveedor() {
 
-        return null;
+        return proveedoresService.listaProveedores();
 
     }
 

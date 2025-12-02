@@ -7,16 +7,17 @@ import com.tienda.tiendita.repository.ProductoRepository;
 import com.tienda.tiendita.repository.ProveedoresRepository;
 import com.tienda.tiendita.services.interfaces.IproveedoresService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProveedoresService implements IproveedoresService {
     private final ProveedoresRepository proveedoresRepository;
 
     public ProveedoresService(ProveedoresRepository proveedoresRepository) {
         this.proveedoresRepository = proveedoresRepository;
     }
-
 
     @Override
     public List<ProveedoresModel> listaProveedores() {

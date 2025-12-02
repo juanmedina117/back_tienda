@@ -1,12 +1,11 @@
 package com.tienda.tiendita.models;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 
+@Entity
+@Table(name = "proveedores")
 public class ProveedoresModel {
 
     @Id
@@ -15,7 +14,7 @@ public class ProveedoresModel {
 
     @NotBlank(message = "El nombre del proveedor es obligatorio")
     @JsonAlias("nombre")
-    @Column(name="nombre",nullable = false)
+    @Column(name="nombre", nullable = false)
     private String nombre;
 
     @JsonAlias("telefono")
